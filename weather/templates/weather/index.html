@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'weather/css/style.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+<video id="bg-video" autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4">
+</video>
+
+<div class="app-card">
+
+    <div class="search-wrap">
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Введіть місто..." autocomplete="off">
+            <button id="search-btn">🔍</button>
+        </div>
+        <div id="autocomplete-list" style="display:none;"></div>
+    </div>
+
+    <div id="error-msg"></div>
+
+    <div class="weather-main">
+        <div class="city-row">
+            <div>
+                <div id="city-name"></div>
+                <div class="today-label">Сьогодні</div>
+            </div>
+            <img id="weather-icon" src="" alt="">
+        </div>
+        <div class="temp-row">
+            <div id="temperature"></div>
+            <div id="description"></div>
+        </div>
+        <div class="weather-details">
+            <div class="detail-item">
+                <div class="icon">💧</div>
+                <div class="value" id="humidity"></div>
+                <div class="label">Вологість</div>
+            </div>
+            <div class="detail-item">
+                <div class="icon">💨</div>
+                <div class="value" id="wind"></div>
+                <div class="label">Вітер</div>
+            </div>
+            <div class="detail-item">
+                <div class="icon">🌡️</div>
+                <div class="value" id="feels-like"></div>
+                <div class="label">Відчувається</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="forecast-container">
+        <div class="forecast-days" id="forecast-days"></div>
+    </div>
+
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+
+    <div class="history-container">
+        <div class="history-tags" id="history-tags"></div>
+        <button id="clear-history-btn" class="clear-history">Очистити історію</button>
+    </div>
+
+</div>
+
+{% csrf_token %}
+<script src="{% static 'weather/js/app.js' %}"></script>
+</body>
+</html>
