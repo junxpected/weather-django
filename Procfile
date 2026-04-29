@@ -1,1 +1,1 @@
-web: gunicorn weather_project.wsgi
+web: gunicorn weather_project.wsgi --bind 0.0.0.0:$PORT
