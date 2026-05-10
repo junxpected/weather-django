@@ -175,4 +175,4 @@ OK
 
 ## Сайт задеплоєний за допомогою Railway
 
-[Відкрити сайт у браузері]([web-production-62d60.up.railway.app](https://unxpected.pythonanywhere.com/))
+[Відкрити сайт у браузері](https://unxpected.pythonanywhere.com/)
